@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: application-webmvc
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: admin
+    password: test
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      maximum-pool-size: 10
+#    jpa:
+#      properties:
+#        hibernate:
+#          dialect: org.hibernate.dialect.MySQL8Dialect
+#  r2dbc:
+#    url: r2dbc:postgresql://localhost:5432/test
+#    username: admin
+#    password: test

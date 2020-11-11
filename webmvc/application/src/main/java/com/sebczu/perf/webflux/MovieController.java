@@ -5,9 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
 
-import static org.springframework.http.MediaType.APPLICATION_STREAM_JSON_VALUE;
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -17,8 +16,8 @@ public class MovieController {
 
   private final MovieRepository repository;
 
-  @GetMapping(produces = APPLICATION_STREAM_JSON_VALUE)
-  public Flux<MovieEntity> list() {
+  @GetMapping
+  public List<MovieEntity> list() {
     log.info("request");
     return repository.findAll();
   }
