@@ -26,3 +26,17 @@ or
 ```bash
 run test: WebfluxApplicationTest
 ```
+
+#### 4. Performance test
+run jmeter
+```bash
+(Test Plan) add -> threads -> thread group
+Number of Threads (users): 20
+Ramp-up periods (seconds): 2
+(Thread Group) add -> Sampler -> Http request
+Server Name or IP: localhost
+Port Number: 8080
+Http Request: GET
+Path: /movies
+(Thread Group) add -> Listener -> View Results in Table
+```
