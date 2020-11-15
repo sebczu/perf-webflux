@@ -137,11 +137,15 @@ Path: /movies/mock
 ```
 ```bash
 Result for Webflux:
-Average response time: 10s
+Average response time: 10.003s
+Max response time: 10.022s
+throughput: 49.7/sec
 ```
 ![Image](monitor/webflux_500req_mock.png)
 ```bash
 Result for Webmvc:
-Average response time: 22s
+Average response time: 24.072s
+Max response time: 50.166s
+throughput: 19.6/sec
 ```
 ![Image](monitor/webmvc_500req_mock.png)
