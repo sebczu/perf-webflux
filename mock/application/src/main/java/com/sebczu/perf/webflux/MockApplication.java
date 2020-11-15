@@ -22,7 +22,7 @@ public class MockApplication {
     wm.stubFor(get(urlEqualTo("/movie"))
         .willReturn(
             aResponse()
-                .withFixedDelay(1000)
+                .withFixedDelay(10000)
                 .withHeader("Content-Type", "application/json")
                 .withBody("\"Avengers\"")
         )

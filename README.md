@@ -121,3 +121,27 @@ Result for Webmvc:
 Average response time: 0.733
 ```
 ![Image](monitor/webmvc_400req_singleMovie.png)
+**Test 5 (mock/500 user)**
+Response time mock: 10s
+```bash
+(Test Plan) add -> threads -> thread group
+Number of Threads (users): 500
+Ramp-up periods (seconds): 1
+Loop Count: infinite
+(Thread Group) add -> Sampler -> Http request
+Server Name or IP: localhost
+Port Number: 8080
+Http Request: GET
+Path: /movies/mock
+(Thread Group) add -> Listener -> Response Time Graph
+```
+```bash
+Result for Webflux:
+Average response time: 10s
+```
+![Image](monitor/webflux_500req_mock.png)
+```bash
+Result for Webmvc:
+Average response time: 22s
+```
+![Image](monitor/webmvc_500req_mock.png)
