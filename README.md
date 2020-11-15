@@ -75,3 +75,49 @@ Result for Webmvc:
 Average response time: 18.762s
 ```
 ![Image](monitor/webmvc_10req_allMovies.png)
+**Test 3 (single movie/200 user)**
+```bash
+(Test Plan) add -> threads -> thread group
+Number of Threads (users): 200
+Ramp-up periods (seconds): 1
+Loop Count: 5
+(Thread Group) add -> Sampler -> Http request
+Server Name or IP: localhost
+Port Number: 8080
+Http Request: GET
+Path: /movies/id
+(Thread Group) add -> Listener -> View Results in Table
+```
+```bash
+Result for Webflux:
+Average response time: 0.809s
+```
+![Image](monitor/webflux_200req_singleMovie.png)
+```bash
+Result for Webmvc:
+Average response time: 0.463
+```
+![Image](monitor/webmvc_200req_singleMovie.png)
+**Test 4 (single movie/400 user)**
+```bash
+(Test Plan) add -> threads -> thread group
+Number of Threads (users): 400
+Ramp-up periods (seconds): 1
+Loop Count: 5
+(Thread Group) add -> Sampler -> Http request
+Server Name or IP: localhost
+Port Number: 8080
+Http Request: GET
+Path: /movies/id
+(Thread Group) add -> Listener -> View Results in Table
+```
+```bash
+Result for Webflux:
+Average response time: 1.206s
+```
+![Image](monitor/webflux_400req_singleMovie.png)
+```bash
+Result for Webmvc:
+Average response time: 0.733
+```
+![Image](monitor/webmvc_400req_singleMovie.png)
